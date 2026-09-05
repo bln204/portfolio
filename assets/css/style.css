@@ -774,6 +774,33 @@ li[role="treeitem"]:hover > .tree-row { background: rgba(127,127,127,0.12); }
 .palette-empty { padding: 20px; text-align: center; color: var(--text-muted); font-size: 13px; }
 
 /* --------------------------------------------------------------------------
+   Image modal (QR code / preview popup)
+   -------------------------------------------------------------------------- */
+.image-modal {
+  position: fixed; inset: 0; z-index: 110;
+  background: rgba(0,0,0,0.6);
+  display: flex; align-items: center; justify-content: center;
+  padding: 24px;
+}
+.image-modal__box {
+  position: relative;
+  width: min(320px, 92vw);
+  background: var(--sidebar-bg); border: 1px solid var(--border);
+  border-radius: 10px; box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  padding: 16px; text-align: center;
+}
+.image-modal__img { width: 100%; border-radius: 6px; display: block; }
+.image-modal__caption { margin: 10px 0 0; font-size: 12.5px; color: var(--text-muted); }
+.image-modal__close {
+  position: absolute; top: -12px; right: -12px;
+  width: 28px; height: 28px; border-radius: 50%;
+  background: var(--sidebar-bg); border: 1px solid var(--border);
+  color: var(--text); display: flex; align-items: center; justify-content: center;
+}
+.image-modal__close:hover { background: var(--danger); color: #fff; border-color: var(--danger); }
+.image-modal__close svg { width: 14px; height: 14px; }
+
+/* --------------------------------------------------------------------------
    Toasts (VS Code notification style)
    -------------------------------------------------------------------------- */
 #toast-container {

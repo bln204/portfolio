@@ -241,6 +241,18 @@ function toggleZenMode(force) {
   document.body.classList.toggle('zen-mode', force);
 }
 
+/* ---------------------------------- Image modal (QR / preview) ---------------------------------- */
+function openImageModal(src, caption) {
+  document.getElementById('imageModalImg').src = src;
+  document.getElementById('imageModalImg').alt = caption || '';
+  document.getElementById('imageModalCaption').textContent = caption || '';
+  document.getElementById('imageModal').hidden = false;
+}
+
+function closeImageModal() {
+  document.getElementById('imageModal').hidden = true;
+}
+
 /* ---------------------------------- Wiring ---------------------------------- */
 document.getElementById('tabsbar').addEventListener('click', (e) => {
   const closeBtn = e.target.closest('[data-close]');
@@ -276,6 +288,12 @@ document.addEventListener('click', (e) => {
 
   const openBtn = e.target.closest('[data-open]');
   if (openBtn) openFile(openBtn.dataset.open);
+
+  const modalTrigger = e.target.closest('[data-modal-image]');
+  if (modalTrigger) {
+    e.preventDefault();
+    openImageModal(modalTrigger.dataset.modalImage, modalTrigger.dataset.modalCaption);
+  }
 
   const pop = document.getElementById('themePopover');
   if (!pop.hidden && !pop.contains(e.target) && !e.target.closest('#themeTriggerBtn') && !e.target.closest('#settingsGearBtn')) {
@@ -316,6 +334,11 @@ document.getElementById('feedbackBtn').addEventListener('click', () => openFile(
 document.getElementById('panelCloseBtn').addEventListener('click', () => toggleTerminalPanel(false));
 document.getElementById('sidebarScrim').addEventListener('click', closeSidebarDrawer);
 
+document.getElementById('imageModalClose').addEventListener('click', closeImageModal);
+document.getElementById('imageModal').addEventListener('click', (e) => {
+  if (e.target.id === 'imageModal') closeImageModal();
+});
+
 document.querySelectorAll('.theme-option').forEach((btn) => {
   btn.addEventListener('click', () => {
     applyTheme(btn.dataset.themeValue);
@@ -347,6 +370,8 @@ document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') {
     const cp = document.getElementById('commandPalette');
     const pop = document.getElementById('themePopover');
+    const imgModal = document.getElementById('imageModal');
+    if (!imgModal.hidden) { closeImageModal(); return; }
     if (!cp.hidden) { closeCommandPalette(); return; }
     if (!pop.hidden) { pop.hidden = true; return; }
     if (document.body.classList.contains('zen-mode')) { toggleZenMode(false); return; }

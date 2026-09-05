@@ -215,6 +215,15 @@
     </div>
   </div>
 
+  <!-- ============================== IMAGE MODAL (QR / preview) ============================== -->
+  <div class="image-modal" id="imageModal" hidden>
+    <div class="image-modal__box">
+      <button class="image-modal__close" id="imageModalClose" title="Đóng" type="button"><i data-lucide="x"></i></button>
+      <img class="image-modal__img" id="imageModalImg" src="" alt="">
+      <p class="image-modal__caption" id="imageModalCaption"></p>
+    </div>
+  </div>
+
   <div id="toast-container"></div>
   `;
 
