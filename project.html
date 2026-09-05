@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="github-dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO Meta Tags -->
+  <title>Dự án | Bùi Lê Nam Portfolio</title>
+  <meta name="description" content="Các dự án tiêu biểu của Bùi Lê Nam: AI Agent (RAG platform), HJhaju (nền tảng đọc truyện), Casestudy M4 (website bán quần áo).">
+  <meta name="author" content="Bùi Lê Nam">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Dự án | Bùi Lê Nam Portfolio">
+  <meta property="og:description" content="Các dự án tiêu biểu của Bùi Lê Nam.">
+  <meta property="og:image" content="assets/images/avatar.jpg">
+
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body data-page="projects">
+
+  <!-- ============================== TITLE BAR ============================== -->
+  <div class="vsc-titlebar">
+    <div class="vsc-titlebar__brand">
+      <i data-lucide="code-2" style="width:16px;height:16px;"></i>
+      <span class="brand-text">Portfolio</span>
+    </div>
+    <div class="vsc-titlebar__center">
+      <button class="vsc-search-pill" id="openPaletteBtn" type="button">
+        <i data-lucide="search" style="width:13px;height:13px;"></i>
+        <span>Bùi Lê Nam — Portfolio</span>
+        <kbd>Ctrl+P</kbd>
+      </button>
+    </div>
+    <div class="vsc-titlebar__controls">
+      <button class="win-btn" id="btnMinimize" title="Thu nhỏ" type="button"><i data-lucide="minus" style="width:14px;height:14px;"></i></button>
+      <button class="win-btn" id="btnMaximize" title="Zen Mode" type="button"><i data-lucide="square" style="width:12px;height:12px;"></i></button>
+      <button class="win-btn close" id="btnClose" title="Đóng" type="button"><i data-lucide="x" style="width:15px;height:15px;"></i></button>
+    </div>
+  </div>
+
+  <!-- ============================== MENU BAR ============================== -->
+  <div class="vsc-menubar" id="menubar">
+    <span class="menu-item" data-menu="file">File</span>
+    <span class="menu-item" data-menu="edit">Edit</span>
+    <span class="menu-item" data-menu="selection">Selection</span>
+    <span class="menu-item" data-menu="view">View</span>
+    <span class="menu-item" data-menu="go">Go</span>
+    <span class="menu-item" data-menu="run">Run</span>
+    <span class="menu-item" data-action="toggle-terminal">Terminal</span>
+    <span class="menu-item" data-menu="help">Help</span>
+  </div>
+
+  <!-- ============================== WORKBENCH ============================== -->
+  <div class="vsc-workbench">
+
+    <!-- Activity Bar -->
+    <div class="vsc-activitybar">
+      <div class="activitybar-top">
+        <button class="activity-icon active" data-view="explorer" title="Explorer" type="button">
+          <i data-lucide="folder"></i>
+        </button>
+        <button class="activity-icon" data-view="search" title="Search (Ctrl+P)" type="button">
+          <i data-lucide="search"></i>
+        </button>
+        <button class="activity-icon" data-view="scm" title="Source Control" type="button">
+          <i data-lucide="git-branch"></i>
+          <span class="badge">3</span>
+        </button>
+        <button class="activity-icon" data-view="debug" title="Run and Debug" type="button">
+          <i data-lucide="bug"></i>
+        </button>
+        <button class="activity-icon" data-view="extensions" title="Extensions" type="button">
+          <i data-lucide="box"></i>
+        </button>
+      </div>
+      <div class="activitybar-bottom">
+        <button class="activity-icon" data-view="account" title="Account" type="button">
+          <i data-lucide="user"></i>
+        </button>
+        <button class="activity-icon" id="settingsGearBtn" title="Settings / Theme" type="button">
+          <i data-lucide="settings"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Sidebar -->
+    <aside class="vsc-sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <span>Explorer</span>
+        <div class="sidebar-header__actions">
+          <button title="New File" type="button"><i data-lucide="file-plus"></i></button>
+          <button title="Collapse All" type="button"><i data-lucide="more-horizontal"></i></button>
+        </div>
+      </div>
+
+      <div class="sidebar-section" id="sectionFolder">
+        <button class="sidebar-section__title" data-toggle-section="sectionFolder" type="button">
+          <i data-lucide="chevron-right" class="chevron"></i>
+          <span>Portfolio</span>
+        </button>
+        <div class="tree-body">
+          <ul class="file-tree">
+            <li class="tree-folder open" role="treeitem">
+              <div class="tree-row folder-row">
+                <i data-lucide="chevron-right" class="chevron"></i>
+                <span class="file-icon"><i data-lucide="folder"></i></span>
+                <span class="tree-name">src</span>
+              </div>
+              <ul>
+                <li class="tree-file" data-file="about" role="treeitem">
+                  <div class="tree-row"><span class="indent" style="width:14px;"></span><span class="file-icon ic-js">JS</span><span class="tree-name">about.js</span></div>
+                </li>
+                <li class="tree-file" data-file="skills" role="treeitem">
+                  <div class="tree-row"><span class="indent" style="width:14px;"></span><span class="file-icon ic-js">JS</span><span class="tree-name">skills.js</span></div>
+                </li>
+                <li class="tree-file" data-file="projects" role="treeitem">
+                  <div class="tree-row"><span class="indent" style="width:14px;"></span><span class="file-icon ic-js">JS</span><span class="tree-name">projects.js</span></div>
+                </li>
+                <li class="tree-file" data-file="education" role="treeitem">
+                  <div class="tree-row"><span class="indent" style="width:14px;"></span><span class="file-icon ic-js">JS</span><span class="tree-name">education.js</span></div>
+                </li>
+                <li class="tree-file" data-file="contact" role="treeitem">
+                  <div class="tree-row"><span class="indent" style="width:14px;"></span><span class="file-icon ic-js">JS</span><span class="tree-name">contact.js</span></div>
+                </li>
+              </ul>
+            </li>
+            <li class="tree-file" data-file="readme" role="treeitem">
+              <div class="tree-row"><span class="file-icon ic-md">M</span><span class="tree-name">README.md</span></div>
+            </li>
+            <li class="tree-file" data-file="package-easter-egg" role="treeitem">
+              <div class="tree-row"><span class="file-icon ic-json">{ }</span><span class="tree-name muted">package.json</span></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="sidebar-section collapsed" id="sectionOpenEditors">
+        <button class="sidebar-section__title" data-toggle-section="sectionOpenEditors" type="button">
+          <i data-lucide="chevron-right" class="chevron"></i>
+          <span>Open Editors</span>
+        </button>
+        <div class="tree-body">
+          <ul class="file-tree open-editors-list" id="openEditorsList"></ul>
+        </div>
+      </div>
+    </aside>
+
+    <div class="sidebar-scrim" id="sidebarScrim"></div>
+
+    <!-- Editor Area -->
+    <div class="vsc-editor-area">
+      <div class="vsc-tabsbar" id="tabsbar"></div>
+      <div class="vsc-breadcrumb" id="breadcrumb"></div>
+
+      <div class="vsc-editor-scroll" id="editorScroll">
+        <div class="editor-minimap"></div>
+
+        <!-- ===================== projects.js ===================== -->
+        <section class="editor-pane code visible" data-pane="projects">
+          <div class="code-line"><span class="ln"></span><div class="code-content"><span class="syn-cmt">// projects.js</span></div></div>
+          <div class="code-line"><span class="ln"></span><div class="code-content">&nbsp;</div></div>
+          <div class="code-line"><span class="ln"></span><div class="code-content"><span class="syn-cmt">/** Một số sản phẩm tôi đã tự tay xây dựng, từ ý tưởng đến triển khai */</span></div></div>
+          <div class="code-line"><span class="ln"></span><div class="code-content">&nbsp;</div></div>
+          <div class="code-line"><span class="ln"></span><div class="code-content"><span class="syn-kw">const</span> <span class="syn-prop">projects</span> = [</div></div>
+          <div class="code-line indent-1"><span class="ln"></span><div class="code-content">
+            <div class="filter-row">
+              <button class="filter-btn active" data-filter="all">Tất cả</button>
+              <button class="filter-btn" data-filter="fullstack">Full-Stack</button>
+              <button class="filter-btn" data-filter="ai-data">AI / Real-time</button>
+            </div>
+          </div></div>
+          <div class="code-line indent-1"><span class="ln"></span><div class="code-content">
+            <div class="projects-grid">
+
+              <div class="project-card" data-category="fullstack ai-data">
+                <div class="project-card__img">
+                  <div class="project-card__visual" style="background:linear-gradient(135deg,#4338ca,#7c3aed)">
+                    <i data-lucide="bot"></i>
+                  </div>
+                  <span class="project-card__tag">RAG / AI Agent</span>
+                </div>
+                <div class="project-card__body">
+                  <h4>AI Agent – Trợ lý tài liệu doanh nghiệp <span class="type">Full-Stack</span></h4>
+                  <p>Nền tảng quản lý tài liệu nội bộ tích hợp trợ lý AI theo kiến trúc RAG (Retrieval-Augmented Generation): upload & index tài liệu PDF/DOCX, chat hỏi-đáp có trích dẫn nguồn, phân quyền truy cập theo Role + Department + Project, đăng nhập Google OAuth2.</p>
+                  <div class="tag-row"><span class="tag-chip">Spring Boot</span><span class="tag-chip">Spring AI · Gemini</span><span class="tag-chip">Qdrant Vector DB</span><span class="tag-chip">MySQL · Flyway</span><span class="tag-chip">JWT · OAuth2</span></div>
+                </div>
+                <div class="project-card__footer">
+                  <a href="https://github.com/bln204/AI_Agent" target="_blank" rel="noopener noreferrer"><i data-lucide="github"></i> Source Code</a>
+                </div>
+              </div>
+
+              <div class="project-card" data-category="fullstack ai-data">
+                <div class="project-card__img">
+                  <div class="project-card__visual" style="background:linear-gradient(135deg,#0369a1,#06b6d4)">
+                    <i data-lucide="book-open"></i>
+                  </div>
+                  <span class="project-card__tag">Realtime WebSocket</span>
+                </div>
+                <div class="project-card__body">
+                  <h4>HJhaju – Nền tảng đọc truyện trực tuyến <span class="type">Auth & WebSocket</span></h4>
+                  <p>Website đọc truyện tranh online (Spring Boot + Thymeleaf) với trang quản trị truyện/chương/người dùng. Đảm nhận module <strong>Xác thực</strong> (đăng ký, đăng nhập, quên mật khẩu qua OTP email, đăng nhập Google) và tính năng <strong>bình luận realtime qua WebSocket</strong>.</p>
+                  <div class="tag-row"><span class="tag-chip">Spring Security</span><span class="tag-chip">OAuth2</span><span class="tag-chip">WebSocket</span><span class="tag-chip">Thymeleaf</span><span class="tag-chip">MySQL</span></div>
+                </div>
+                <div class="project-card__footer">
+                  <a href="https://github.com/bln204/HJhaju_web" target="_blank" rel="noopener noreferrer"><i data-lucide="github"></i> Source Code</a>
+                </div>
+              </div>
+
+              <div class="project-card" data-category="fullstack">
+                <div class="project-card__img">
+                  <div class="project-card__visual" style="background:linear-gradient(135deg,#b45309,#f59e0b)">
+                    <i data-lucide="shirt"></i>
+                  </div>
+                  <span class="project-card__tag">E-Commerce Case Study</span>
+                </div>
+                <div class="project-card__body">
+                  <h4>Casestudy M4 – Clothing Store <span class="type">Full-Stack</span></h4>
+                  <p>Website bán quần áo (đồ án case study) xây dựng full-stack với Spring Boot + Thymeleaf: quản lý sản phẩm & danh mục, giỏ hàng, đặt hàng và xác thực người dùng bằng Spring Security.</p>
+                  <div class="tag-row"><span class="tag-chip">Spring Boot</span><span class="tag-chip">Thymeleaf</span><span class="tag-chip">Spring Security</span><span class="tag-chip">MySQL</span></div>
+                </div>
+                <div class="project-card__footer">
+                  <a href="https://github.com/bln204/casestudy_M4" target="_blank" rel="noopener noreferrer"><i data-lucide="github"></i> Source Code</a>
+                </div>
+              </div>
+
+            </div>
+          </div></div>
+          <div class="code-line"><span class="ln"></span><div class="code-content">];</div></div>
+          <div class="code-line"><span class="ln"></span><div class="code-content">&nbsp;</div></div>
+          <div class="code-line"><span class="ln"></span><div class="code-content"><span class="syn-kw">export default</span> projects;</div></div>
+        </section>
+      </div>
+
+      <!-- Bottom Panel: Terminal -->
+      <div class="vsc-panel" id="bottomPanel" hidden>
+        <div class="panel-tabs">
+          <span class="panel-tab active">TERMINAL</span>
+          <span class="panel-tab" style="opacity:.5;">PROBLEMS</span>
+          <span class="panel-tab" style="opacity:.5;">OUTPUT</span>
+          <button class="panel-close" id="panelCloseBtn" title="Đóng Terminal" type="button"><i data-lucide="x" style="width:15px;height:15px;"></i></button>
+        </div>
+        <div class="panel-body">
+          <div id="terminalBody">
+            <div class="term-line">Portfolio Interactive Shell v2.4.0 (x86_64-pc-linux)<br>Gõ <strong style="color:var(--success)">help</strong> để xem danh sách câu lệnh hoặc <strong style="color:var(--syn-tag)">sudo hire</strong> để gửi lời mời làm việc!</div>
+            <div id="terminal-output"></div>
+          </div>
+          <div class="term-input-row">
+            <span class="prompt">visitor@dev:~$</span>
+            <input type="text" id="terminal-input" placeholder="help, skills, projects, contact, sudo hire..." autocomplete="off" spellcheck="false">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================== STATUS BAR ============================== -->
+  <div class="vsc-statusbar">
+    <div class="status-left">
+      <button class="status-item" id="branchBtn" type="button"><i data-lucide="git-branch"></i> main</button>
+      <button class="status-item" id="syncBtn" type="button"><i data-lucide="refresh-cw"></i></button>
+      <button class="status-item" id="problemsBtn" type="button"><i data-lucide="check-circle-2"></i> 0</button>
+    </div>
+    <div class="status-right">
+      <span class="status-item hide-mobile" id="cursorPos">Ln 96, Col 2</span>
+      <span class="status-item hide-mobile">Spaces: 2</span>
+      <span class="status-item hide-mobile">UTF-8</span>
+      <span class="status-item" id="langMode">JavaScript</span>
+      <button class="status-item" id="themeTriggerBtn" type="button"><i data-lucide="palette"></i> <span id="themeLabel" class="hide-mobile">GitHub Dark</span></button>
+      <button class="status-item" id="terminalToggleBtn" type="button"><i data-lucide="terminal"></i></button>
+      <button class="status-item" id="feedbackBtn" title="Liên hệ" type="button"><i data-lucide="smile"></i></button>
+    </div>
+  </div>
+
+  <!-- Zen mode exit hint -->
+  <div class="zen-exit" id="zenExit">
+    <span>Zen Mode</span>
+    <kbd>Esc</kbd>
+    <span>để thoát</span>
+  </div>
+
+  <!-- ============================== THEME POPOVER ============================== -->
+  <div class="theme-popover" id="themePopover" hidden>
+    <button class="theme-option active" data-theme-value="github-dark" type="button"><span class="swatch" style="background:#0d1117"></span>GitHub Dark<i data-lucide="check" class="check"></i></button>
+    <button class="theme-option" data-theme-value="one-dark-pro" type="button"><span class="swatch" style="background:#282c34"></span>One Dark Pro<i data-lucide="check" class="check"></i></button>
+    <button class="theme-option" data-theme-value="dracula" type="button"><span class="swatch" style="background:#282a36"></span>Dracula<i data-lucide="check" class="check"></i></button>
+    <button class="theme-option" data-theme-value="nord" type="button"><span class="swatch" style="background:#2e3440"></span>Nord<i data-lucide="check" class="check"></i></button>
+    <button class="theme-option" data-theme-value="light-plus" type="button"><span class="swatch" style="background:#ffffff;border-color:#ccc"></span>Light+<i data-lucide="check" class="check"></i></button>
+  </div>
+
+  <!-- ============================== COMMAND PALETTE ============================== -->
+  <div class="command-palette" id="commandPalette" hidden>
+    <div class="command-palette__box">
+      <div class="command-palette__input-row">
+        <i data-lucide="search"></i>
+        <input type="text" id="paletteInput" placeholder="Nhập tên tệp để mở… (about, skills, projects, contact)">
+      </div>
+      <ul id="paletteList"></ul>
+    </div>
+  </div>
+
+  <div id="toast-container"></div>
+
+  <script>
+    lucide.createIcons();
+  </script>
+  <script src="assets/js/typing.js"></script>
+  <script src="assets/js/contact.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/ide.js"></script>
+</body>
+</html>
