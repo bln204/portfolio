@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      // Simulate sending with loading state
+      // Real submission via Formspree API (AJAX)
       const originalText = submitBtn.innerHTML;
       submitBtn.disabled = true;
       submitBtn.innerHTML = `
@@ -94,13 +94,33 @@ document.addEventListener('DOMContentLoaded', () => {
         <span>Đang gửi tin nhắn...</span>
       `;
 
-      setTimeout(() => {
+      const formData = new FormData(contactForm);
+      const actionUrl = contactForm.getAttribute('action') || 'https://formspree.io/f/xnpqrrnw';
+
+      fetch(actionUrl, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      })
+      .then(async (response) => {
+        if (response.ok) {
+          contactForm.reset();
+          showToast('Cảm ơn bạn! Tin nhắn đã được gửi thành công đến Bùi Lê Nam.', 'success');
+        } else {
+          const data = await response.json().catch(() => null);
+          const errorMsg = data && data.errors ? data.errors.map(err => err.message).join(', ') : 'Gửi tin nhắn không thành công. Vui lòng thử lại!';
+          showToast(errorMsg, 'error');
+        }
+      })
+      .catch(() => {
+        showToast('Lỗi kết nối mạng! Vui lòng thử lại sau.', 'error');
+      })
+      .finally(() => {
         submitBtn.disabled = false;
         submitBtn.innerHTML = originalText;
-        contactForm.reset();
-
-        showToast('Cảm ơn bạn! Tin nhắn đã được gửi thành công. Tôi sẽ phản hồi sớm nhất có thể.', 'success');
-      }, 1200);
+      });
     });
   }
 });

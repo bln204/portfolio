@@ -63,24 +63,24 @@
 
           <div class="contact-card">
             <h4>Gửi tin nhắn</h4>
-            <form id="contact-form">
+            <form id="contact-form" action="https://formspree.io/f/xnpqrrnw" method="POST">
               <div class="form-grid">
                 <div class="form-field">
                   <label for="sender-name">Họ và tên <span class="req">*</span></label>
-                  <input type="text" id="sender-name" required placeholder="Ví dụ: Nguyễn Văn B">
+                  <input type="text" id="sender-name" name="name" required placeholder="Ví dụ: Nguyễn Văn B">
                 </div>
                 <div class="form-field">
                   <label for="sender-email">Email của bạn <span class="req">*</span></label>
-                  <input type="email" id="sender-email" required placeholder="name@company.com">
+                  <input type="email" id="sender-email" name="email" required placeholder="name@company.com">
                 </div>
               </div>
               <div class="form-field">
                 <label for="sender-subject">Tiêu đề</label>
-                <input type="text" id="sender-subject" placeholder="Lời mời phỏng vấn / Trao đổi dự án...">
+                <input type="text" id="sender-subject" name="_subject" placeholder="Lời mời phỏng vấn / Trao đổi dự án...">
               </div>
               <div class="form-field">
                 <label for="sender-message">Nội dung tin nhắn <span class="req">*</span></label>
-                <textarea id="sender-message" rows="4" required placeholder="Viết nội dung tin nhắn của bạn ở đây..."></textarea>
+                <textarea id="sender-message" name="message" rows="4" required placeholder="Viết nội dung tin nhắn của bạn ở đây..."></textarea>
               </div>
               <button type="submit" class="submit-btn"><i data-lucide="send" style="width:15px;height:15px;"></i><span>Gửi Tin Nhắn Ngay</span></button>
             </form>
