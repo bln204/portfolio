@@ -98,16 +98,17 @@ function initInteractiveTerminal() {
     `,
     contact: `
       <div>
-        <div>📧 Email: <a href="mailto:nguyenvana.dev@gmail.com" class="t-accent">nguyenvana.dev@gmail.com</a></div>
-        <div>📱 Phone: +84 987 654 321</div>
-        <div>📍 Vị trí: Hà Nội / TP. Hồ Chí Minh, Việt Nam (On-site / Hybrid / Remote)</div>
+        <div>📧 Email: <a href="mailto:lenambui3@gmail.com" class="t-accent">lenambui3@gmail.com</a></div>
+        <div>📱 Phone: +84 (0) 394 786 578</div>
+        <div>📍 Vị trí: TP. Hồ Chí Minh, Việt Nam</div>
       </div>
     `,
     socials: `
       <div>
-        <div>🐙 GitHub: <a href="https://github.com" target="_blank" class="t-accent">github.com/nguyenvana-dev</a></div>
-        <div>💼 LinkedIn: <a href="https://linkedin.com" target="_blank" class="t-accent">linkedin.com/in/nguyenvana</a></div>
-        <div>⚡ LeetCode: <a href="https://leetcode.com" target="_blank" class="t-accent">leetcode.com/nguyenvana</a></div>
+        <div>🐙 GitHub: <a href="https://github.com/bln204" target="_blank" class="t-accent">github.com/bln204</a></div>
+        <div>💼 LinkedIn: <a href="https://www.linkedin.com/in/nam-l%C3%AA-1ab646434/" target="_blank" class="t-accent">linkedin.com/in/nam-lê</a></div>
+        <div>✈️ Telegram: <a href="https://t.me/namlb_09" target="_blank" class="t-accent">t.me/namlb_09</a></div>
+        <div>💬 Zalo: <a href="https://zalo.me/0394786578" target="_blank" class="t-accent">zalo.me/0394786578</a></div>
       </div>
     `,
     'sudo hire': `

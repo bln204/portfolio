@@ -35,26 +35,26 @@ function showToast(message, type = 'success') {
   setTimeout(dismiss, 4000);
 }
 
-// Copy email helper
-function copyEmail(email) {
-  navigator.clipboard.writeText(email).then(() => {
-    showToast(`Đã sao chép email: ${email}`, 'success');
+// Copy helper
+function copyToClipboard(text, label = 'nội dung') {
+  navigator.clipboard.writeText(text).then(() => {
+    showToast(`Đã sao chép ${label}: ${text}`, 'success');
   }).catch(() => {
-    showToast('Không thể sao chép email. Vui lòng thử lại!', 'error');
+    showToast(`Không thể sao chép ${label}. Vui lòng thử lại!`, 'error');
   });
 }
 
 // Contact form handler
 document.addEventListener('DOMContentLoaded', () => {
   const contactForm = document.getElementById('contact-form');
-  const copyBtn = document.getElementById('copy-email-btn');
 
-  if (copyBtn) {
-    copyBtn.addEventListener('click', () => {
-      const email = copyBtn.getAttribute('data-email') || 'contact@sinhvienit.dev';
-      copyEmail(email);
+  document.querySelectorAll('.copy-btn[data-copy], #copy-email-btn').forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      const text = btn.getAttribute('data-copy') || btn.getAttribute('data-email') || 'lenambui3@gmail.com';
+      const label = btn.getAttribute('data-label') || 'Email';
+      copyToClipboard(text, label);
     });
-  }
+  });
 
   if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
