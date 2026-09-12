@@ -27,26 +27,29 @@
     <section class="editor-pane code visible" data-pane="contact">
       <div class="code-line"><span class="ln"></span><div class="code-content"><span class="syn-cmt">// contact.js</span></div></div>
       <div class="code-line"><span class="ln"></span><div class="code-content">&nbsp;</div></div>
-      <div class="code-line"><span class="ln"></span><div class="code-content"><span class="syn-cmt">/** Sẵn sàng trao đổi cơ hội — gửi tin nhắn cho tôi ngay bên dưới */</span></div></div>
+      <div class="code-line"><span class="ln"></span><div class="code-content"><span class="syn-cmt">/**</span></div></div>
+      <div class="code-line"><span class="ln"></span><div class="code-content"><span class="syn-cmt"> * @file contact.js</span></div></div>
+      <div class="code-line"><span class="ln"></span><div class="code-content"><span class="syn-cmt"> * @description Cổng tiếp nhận cơ hội việc làm (Fresher / Junior Backend) & trao đổi hợp tác dự án</span></div></div>
+      <div class="code-line"><span class="ln"></span><div class="code-content"><span class="syn-cmt"> */</span></div></div>
       <div class="code-line"><span class="ln"></span><div class="code-content">&nbsp;</div></div>
       <div class="code-line"><span class="ln"></span><div class="code-content"><span class="syn-kw">const</span> <span class="syn-prop">contact</span> = {</div></div>
       <div class="code-line indent-1"><span class="ln"></span><div class="code-content">
         <div class="contact-grid">
           <div class="contact-card">
-            <h4>Thông tin trực tiếp</h4>
+            <h4>Kênh kết nối trực tiếp</h4>
             <div class="info-row">
               <div class="info-row__icon"><i data-lucide="mail"></i></div>
-              <div class="info-row__text"><div class="label">Email liên hệ</div><div class="value"><a href="https://mail.google.com/mail/?view=cm&fs=1&to=lenambui3@gmail.com&su=Contact%20from%20Portfolio" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:none;">lenambui3@gmail.com</a></div></div>
+              <div class="info-row__text"><div class="label">Email công việc</div><div class="value"><a href="https://mail.google.com/mail/?view=cm&fs=1&to=lenambui3@gmail.com&su=Contact%20from%20Portfolio" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:none;">lenambui3@gmail.com</a></div></div>
               <button class="copy-btn" id="copy-email-btn" data-email="lenambui3@gmail.com" data-copy="lenambui3@gmail.com" data-label="Email" title="Sao chép Email" type="button"><i data-lucide="copy"></i></button>
             </div>
             <div class="info-row">
               <div class="info-row__icon"><i data-lucide="phone"></i></div>
-              <div class="info-row__text"><div class="label">Số điện thoại / Zalo</div><div class="value"><a href="https://zalo.me/0394786578" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:none;">+84 (0) 394 786 578</a></div></div>
+              <div class="info-row__text"><div class="label">Hotline / Zalo</div><div class="value"><a href="https://zalo.me/0394786578" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:none;">+84 (0) 394 786 578</a></div></div>
               <a href="https://zalo.me/0394786578" target="_blank" rel="noopener noreferrer" class="copy-btn" title="Mở Zalo"><i data-lucide="external-link"></i></a>
             </div>
             <div class="info-row">
               <div class="info-row__icon"><i data-lucide="link"></i></div>
-              <div class="info-row__text"><div class="label">LinkedIn</div><div class="value"><a href="https://www.linkedin.com/in/nam-l%C3%AA-1ab646434/" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:none;">linkedin.com/in/nam-lê</a></div></div>
+              <div class="info-row__text"><div class="label">LinkedIn Profile</div><div class="value"><a href="https://www.linkedin.com/in/nam-l%C3%AA-1ab646434/" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:none;">linkedin.com/in/nam-lê</a></div></div>
               <a href="https://www.linkedin.com/in/nam-l%C3%AA-1ab646434/" target="_blank" rel="noopener noreferrer" class="copy-btn" title="Mở LinkedIn"><i data-lucide="external-link"></i></a>
             </div>
             <div class="info-row">
@@ -56,31 +59,31 @@
             </div>
             <div class="info-row">
               <div class="info-row__icon"><i data-lucide="map-pin"></i></div>
-              <div class="info-row__text"><div class="label">Khu vực làm việc</div><div class="value">TP. Hồ Chí Minh</div></div>
+              <div class="info-row__text"><div class="label">Địa điểm & Hình thức</div><div class="value">TP. Hồ Chí Minh · On-site / Hybrid / Remote</div></div>
             </div>
-            <div class="availability-banner"><span class="dot"></span> Hiện tại sẵn sàng phỏng vấn và nhận việc ngay từ tuần sau.</div>
+            <div class="availability-banner"><span class="dot"></span> Sẵn sàng tham gia phỏng vấn và nhận việc ngay.</div>
           </div>
 
           <div class="contact-card">
-            <h4>Gửi tin nhắn</h4>
+            <h4>Gửi tin nhắn trực tiếp</h4>
             <form id="contact-form" action="https://formspree.io/f/xnpqrrnw" method="POST">
               <div class="form-grid">
                 <div class="form-field">
-                  <label for="sender-name">Họ và tên <span class="req">*</span></label>
-                  <input type="text" id="sender-name" name="name" required placeholder="Ví dụ: Nguyễn Văn B">
+                  <label for="sender-name">Họ và tên / Doanh nghiệp <span class="req">*</span></label>
+                  <input type="text" id="sender-name" name="name" required placeholder="Ví dụ: Nguyễn Văn A (Công ty XYZ)">
                 </div>
                 <div class="form-field">
-                  <label for="sender-email">Email của bạn <span class="req">*</span></label>
+                  <label for="sender-email">Email liên hệ lại <span class="req">*</span></label>
                   <input type="email" id="sender-email" name="email" required placeholder="name@company.com">
                 </div>
               </div>
               <div class="form-field">
                 <label for="sender-subject">Tiêu đề</label>
-                <input type="text" id="sender-subject" name="_subject" placeholder="Lời mời phỏng vấn / Trao đổi dự án...">
+                <input type="text" id="sender-subject" name="_subject" placeholder="Ví dụ: Lời mời phỏng vấn Fresher Backend Developer...">
               </div>
               <div class="form-field">
-                <label for="sender-message">Nội dung tin nhắn <span class="req">*</span></label>
-                <textarea id="sender-message" name="message" rows="4" required placeholder="Viết nội dung tin nhắn của bạn ở đây..."></textarea>
+                <label for="sender-message">Nội dung trao đổi <span class="req">*</span></label>
+                <textarea id="sender-message" name="message" rows="4" required placeholder="Mô tả ngắn gọn về cơ hội việc làm, yêu cầu dự án hoặc nội dung bạn muốn trao đổi..."></textarea>
               </div>
               <button type="submit" class="submit-btn"><i data-lucide="send" style="width:15px;height:15px;"></i><span>Gửi Tin Nhắn Ngay</span></button>
             </form>
@@ -89,7 +92,7 @@
       </div></div>
       <div class="code-line"><span class="ln"></span><div class="code-content">};</div></div>
       <div class="code-line"><span class="ln"></span><div class="code-content">&nbsp;</div></div>
-      <div class="code-line"><span class="ln"></span><div class="code-content"><span class="syn-kw">function</span> <span class="syn-fn">sendMessage</span>(payload) { <span class="syn-cmt">/* xử lý trong contact.js */</span> }</div></div>
+      <div class="code-line"><span class="ln"></span><div class="code-content"><span class="syn-kw">function</span> <span class="syn-fn">sendMessage</span>(payload) { <span class="syn-cmt">/* Phản hồi nhanh chóng qua Email / SĐT trong vòng 24 giờ */</span> }</div></div>
     </section>
   </template>
 

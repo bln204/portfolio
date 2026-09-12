@@ -91,9 +91,11 @@ function initInteractiveTerminal() {
     `,
     education: `
       <div>
-        <div>🎓 <span class="t-accent">Đại học:</span> Cử nhân Công nghệ Thông tin (2022 - 2026)</div>
-        <div>📈 <span class="t-success">GPA:</span> 3.65 / 4.0 (Top 5% sinh viên tiêu biểu)</div>
-        <div>🏆 <span class="t-warn">Thành tích:</span> Giải Ba Hackathon sinh viên, Top 100 LeetCode Contest</div>
+        <div>🎓 <span class="t-accent">Đại học:</span> Cử nhân Công nghệ Thông tin - Đại học Văn Hiến (2022 - 2026)</div>
+        <div>📈 <span class="t-success">GPA tích lũy:</span> 3.02 / 4.00</div>
+        <div>📜 <span class="t-warn">2023:</span> Chứng chỉ Java Bootcamp Developer (CodeGym Vietnam)</div>
+        <div>💻 <span class="t-accent">2024:</span> Xây dựng E-Commerce Case Study & Realtime WebSocket</div>
+        <div>🤖 <span class="t-accent">2026:</span> Đồ án tốt nghiệp: Hệ thống AI Agent doanh nghiệp (RAG)</div>
       </div>
     `,
     contact: `
